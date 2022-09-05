@@ -2,20 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawn : MonoBehaviour
+public class enemySpawn : MonoBehaviour
 {
-    public GameObject[] spawnPoints;
-    private int randomSpawn;
-    private float timer = 2.0f;
-    public GameObject[] enemyTypes;
+    [SerializeField]
+    private EnemyData EnemyData;
+    public GameObject[] spawnpoint;
+    public GameObject[] chooseMob;
+    private int index;
+    private int mob;
+    private float timer = 1;
 
-
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if(timer == 0)
-        {
-            randomSpawn = Random.Range(0, spawnPoints.Length);
-        }
-    }
+        timer -= 1 * Time.deltaTime;
 
+        if (timer <= 0)
+        {
+            index = Random.Range(0, 5);
+            mob = Random.Range(1, 4);
+            Instantiate(chooseMob[mob], spawnpoint[index].transform.position, Quaternion.identity);
+           
+            timer = 3;
+        }
+
+    }
 }
