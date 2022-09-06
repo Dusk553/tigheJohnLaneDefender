@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   health: 3
+  hit: {fileID: -7772679239608305367}
 --- !u!58 &-3588747697260513168
 CircleCollider2D:
   m_ObjectHideFlags: 0

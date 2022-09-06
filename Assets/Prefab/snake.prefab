@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   health: 1
+  hit: {fileID: 2343738594581617124}
 --- !u!70 &5731540362608851786
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ Animator:
   m_GameObject: {fileID: 2304362381815859100}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ecdc2a8d65ea09f4593b5a73f5cb7d6e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

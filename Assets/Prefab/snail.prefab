@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   health: 5
+  hit: {fileID: 6660946204670098450}
 --- !u!95 &6660946204670098450
 Animator:
   serializedVersion: 4
@@ -112,7 +113,7 @@ Animator:
   m_GameObject: {fileID: 1749855696783453044}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1da43ed406b711f43906b95031d6d3aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

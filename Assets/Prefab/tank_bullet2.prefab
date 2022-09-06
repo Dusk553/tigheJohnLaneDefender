@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3465707176960357333}
   - component: {fileID: 3465707176960357332}
   - component: {fileID: 3465707176960357331}
+  - component: {fileID: 6097162591051615695}
   m_Layer: 0
   m_Name: tank_bullet2
   m_TagString: Bullet
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394dc86293537c342a31b114542b5ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: {fileID: 6097162591051615695}
 --- !u!70 &3465707176960357331
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,3 +116,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.25, y: 0.16}
   m_Direction: 1
+--- !u!95 &6097162591051615695
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465707176960357330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94b7baafeb44588429db615d16129cc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

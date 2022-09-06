@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class mobController : MonoBehaviour
 {
-    public playerLives playerLivesIntance;
+    private playerLives playerlivesInstance;
 
     public float speed;
     public float health;
     private float timer;
+    public Animator hit;
+
+    private void Start()
+    {
+        playerlivesInstance = GameObject.FindObjectOfType<playerLives>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         timer -= 1 * Time.deltaTime;
-
 
         if (gameObject.name == "slime(Clone)" && timer <= 0)
         {
@@ -30,9 +35,16 @@ public class mobController : MonoBehaviour
 
         if (health == 0)
         {
-            Destroy(gameObject);
-            playerLivesIntance.UpdateScore();
+            playerlivesInstance.UpdateScore();
+            hit.SetBool("dead", true);
         }
+    }
+    IEnumerator Damage()
+    {
+
+        hit.SetBool("hit", true);
+        yield return new WaitForSeconds(.5f);
+        hit.SetBool("hit", false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,9 +61,15 @@ public class mobController : MonoBehaviour
         {
             health -= 1;
             speed = 0;
+            StartCoroutine(Damage());
             timer = .5f;
 
         }
+    }
+
+    public void dead()
+    {
+        Destroy(gameObject);
     }
 }
 

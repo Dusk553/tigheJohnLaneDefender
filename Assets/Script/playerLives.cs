@@ -7,36 +7,50 @@ using UnityEngine.SceneManagement;
 public class playerLives : MonoBehaviour
 {
     private int lives = 3;
-    private int score = 0;
     public TMP_Text Text;
-    public TMP_Text scoreText;
     public GameObject loseFilter;
+    public GameObject duringPlay;
 
+    private int score = 0;
+    private int highScore = 0;
+    public TMP_Text scoreText;
+    public TMP_Text loseScoreText;
+    public TMP_Text highScoreText;
+
+    private void Start()
+    {
+        scoreText.text = "Score: " + score;
+        Text.text = "Lives: " + lives;
+    }
     private void Update()
     {
-        Text.text = "Lives: " + lives;
 
-        scoreText.text = "Score: " + score;
 
         if (Input.GetKey(KeyCode.F))
         {
             ReloadScene();
         }
     }
-
     public void UpdateScore()
     {
-        score += 100;
+        score += 1;
         scoreText.text = "Score: " + score;
+        loseScoreText.text = scoreText.text;
+        if(score > highScore)
+        {
+            highScoreText.text = scoreText.text;
+        }
     }
 
-   public void UpdateLives()
+    public void UpdateLives()
     {
         lives -= 1;
         Text.text = "Lives: " + lives;
         if (lives == 0)
         {
             loseFilter.gameObject.SetActive(true);
+            duringPlay.gameObject.SetActive(false);
+
             
             Time.timeScale = 0;
         }
