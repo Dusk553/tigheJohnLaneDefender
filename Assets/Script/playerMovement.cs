@@ -12,6 +12,9 @@ public class playerMovement : MonoBehaviour
     public GameObject bullet;
     public GameObject cannon;
 
+    public AudioSource source;
+    public AudioClip gunshot;
+
     // Update is called once per frame
     void Update()
     {
@@ -46,6 +49,7 @@ public class playerMovement : MonoBehaviour
     }
     void shootBullet()
     {
+        source.PlayOneShot(gunshot);
         Instantiate(bullet, cannon.transform.position, Quaternion.identity);
         canShoot = false;
         timer = .5f;

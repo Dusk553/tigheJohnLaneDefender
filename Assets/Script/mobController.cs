@@ -11,6 +11,10 @@ public class mobController : MonoBehaviour
     private float timer;
     public Animator hit;
 
+    public AudioSource source;
+    public AudioClip hitSound;
+    public AudioClip deathSound;
+
     private void Start()
     {
         playerlivesInstance = GameObject.FindObjectOfType<playerLives>();
@@ -35,13 +39,14 @@ public class mobController : MonoBehaviour
 
         if (health == 0)
         {
+            source.PlayOneShot(deathSound);
             playerlivesInstance.UpdateScore();
             hit.SetBool("dead", true);
         }
     }
     IEnumerator Damage()
     {
-
+        source.PlayOneShot(hitSound);
         hit.SetBool("hit", true);
         yield return new WaitForSeconds(.5f);
         hit.SetBool("hit", false);

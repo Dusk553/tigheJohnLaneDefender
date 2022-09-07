@@ -16,11 +16,15 @@ public class playerLives : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text loseScoreText;
     public TMP_Text highScoreText;
+   
+    public AudioSource source;
+    public AudioClip loseLife;
 
     private void Start()
     {
         scoreText.text = "Score: " + score;
         Text.text = "Lives: " + lives;
+        loseScoreText.text = scoreText.text;
     }
     private void Update()
     {
@@ -45,6 +49,7 @@ public class playerLives : MonoBehaviour
     public void UpdateLives()
     {
         lives -= 1;
+        source.PlayOneShot(loseLife);
         Text.text = "Lives: " + lives;
         if (lives == 0)
         {
