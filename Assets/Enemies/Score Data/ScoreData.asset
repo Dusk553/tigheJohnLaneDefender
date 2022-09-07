@@ -10,8 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cf3541edb667194baf88f411a6f1a5d, type: 3}
-  m_Name: Slime Data
+  m_Name: ScoreData
   m_EditorClassIdentifier: 
-  mobName: Slime
-  health: 3
-  speed: 2
+  highScore: 0

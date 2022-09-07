@@ -3,17 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObject/EnemyData", order = 1)]
+[CreateAssetMenu(fileName = "ScoreData", menuName = "ScriptableObject/ScoreData", order = 1)]
 public class EnemyData : ScriptableObject
 {
     [SerializeField]
-    private string mobName;
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private float speed;
+    private int highScore;
 
-    private string MobName { get => mobName; set => mobName = value; }
-    public int Health { get => health; set => health = value; }
-    public float Speed { get => speed; set => speed = value; }
+    public int HighScore { get => highScore; set => highScore = value; }
 }

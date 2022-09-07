@@ -11,8 +11,10 @@ public class playerLives : MonoBehaviour
     public GameObject loseFilter;
     public GameObject duringPlay;
 
+    public EnemyData scoreData;
+
     private int score = 0;
-    private int highScore = 0;
+    private int highScore;
     public TMP_Text scoreText;
     public TMP_Text loseScoreText;
     public TMP_Text highScoreText;
@@ -25,6 +27,8 @@ public class playerLives : MonoBehaviour
         scoreText.text = "Score: " + score;
         Text.text = "Lives: " + lives;
         loseScoreText.text = scoreText.text;
+        highScore = scoreData.HighScore;
+        highScoreText.text = "High Score: " + highScore;
     }
     private void Update()
     {
@@ -42,7 +46,9 @@ public class playerLives : MonoBehaviour
         loseScoreText.text = scoreText.text;
         if(score > highScore)
         {
-            highScoreText.text = scoreText.text;
+            scoreData.HighScore = score;
+            highScore = scoreData.HighScore;
+            highScoreText.text = "High Score: " + highScore;
         }
     }
 
